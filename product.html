@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>FreshBite - Product Details</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <style>
+
+        /* =====================================
+           PRODUCT PAGE
+        ===================================== */
+
+        .product-page {
+
+            min-height: 75vh;
+
+            padding: 55px 0 80px;
+
+            background: #fff8f0;
+
+        }
+
+
+        .breadcrumb {
+
+            margin-bottom: 25px;
+
+            color: #8a766c;
+
+            font-size: 10px;
+
+        }
+
+
+        .breadcrumb a {
+
+            color: #ff6b35;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+        }
+
+
+        .product-container {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 40px;
+
+            padding: 25px;
+
+            background: #ffffff;
+
+            border: 1px solid #f0d9ca;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(45, 27, 18, 0.06);
+
+        }
+
+
+        /* =====================================
+           PRODUCT IMAGE
+        ===================================== */
+
+        .product-image {
+
+            width: 100%;
+
+            height: 430px;
+
+            overflow: hidden;
+
+            border-radius: 15px;
+
+            background: #fff0e8;
+
+        }
+
+
+        .product-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+        }
+
+
+        /* =====================================
+           PRODUCT INFO
+        ===================================== */
+
+        .product-info {
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+        }
+
+
+        .restaurant-name {
+
+            margin-bottom: 8px;
+
+            color: #ff6b35;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .product-info h1 {
+
+            margin-bottom: 10px;
+
+            color: #2d1b12;
+
+            font-size: 34px;
+
+            line-height: 1.2;
+
+        }
+
+
+        .rating {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .stars {
+
+            color: #f5a623;
+
+            font-size: 14px;
+
+        }
+
+
+        .rating-text {
+
+            color: #8a766c;
+
+            font-size: 9px;
+
+        }
+
+
+        .description {
+
+            margin-bottom: 18px;
+
+            color: #6f5d54;
+
+            font-size: 11px;
+
+            line-height: 1.8;
+
+        }
+
+
+        .price {
+
+            margin-bottom: 18px;
+
+            color: #ff6b35;
+
+            font-size: 28px;
+
+            font-weight: 800;
+
+        }
+
+
+        /* =====================================
+           DIETARY TAGS
+        ===================================== */
+
+        .tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .tag {
+
+            padding: 6px 10px;
+
+            border-radius: 20px;
+
+            background: #fff0e8;
+
+            color: #ff6b35;
+
+            font-size: 8px;
+
+            font-weight: 700;
+
+        }
+
+
+        .tag.veg {
+
+            background: #eaf7ed;
+
+            color: #218739;
+
+        }
+
+
+        .tag.nonveg {
+
+            background: #fff0e8;
+
+            color: #c94c36;
+
+        }
+
+
+        /* =====================================
+           QUANTITY
+        ===================================== */
+
+        .quantity-section {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .quantity-section label {
+
+            color: #2d1b12;
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+        }
+
+
+        .quantity-control {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 4px;
+
+            border: 1px solid #f0d9ca;
+
+            border-radius: 8px;
+
+        }
+
+
+        .quantity-control button {
+
+            width: 27px;
+
+            height: 27px;
+
+            border: none;
+
+            border-radius: 6px;
+
+            background: #fff0e8;
+
+            color: #2d1b12;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+        }
+
+
+        .quantity-control span {
+
+            min-width: 20px;
+
+            text-align: center;
+
+            color: #2d1b12;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+        }
+
+
+        /* =====================================
+           ACTION BUTTONS
+        ===================================== */
+
+        .product-actions {
+
+            display: flex;
+
+            gap: 10px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .add-cart-btn {
+
+            flex: 1;
+
+            padding: 13px 18px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            background: #ff6b35;
+
+            color: #ffffff;
+
+            font-family: inherit;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .add-cart-btn:hover {
+
+            background: #e95420;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        .wishlist-btn {
+
+            width: 50px;
+
+            border: 1px solid #f0d9ca;
+
+            border-radius: 9px;
+
+            background: #ffffff;
+
+            color: #ff6b35;
+
+            font-size: 18px;
+
+            cursor: pointer;
+
+        }
+
+
+        .wishlist-btn:hover {
+
+            background: #fff0e8;
+
+        }
+
+
+        .delivery-info {
+
+            padding: 12px;
+
+            border-radius: 9px;
+
+            background: #fff8f0;
+
+            color: #6f5d54;
+
+            font-size: 9px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================
+           DETAILS SECTION
+        ===================================== */
+
+        .details-section {
+
+            margin-top: 30px;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 20px;
+
+        }
+
+
+        .detail-card {
+
+            padding: 22px;
+
+            background: #ffffff;
+
+            border: 1px solid #f0d9ca;
+
+            border-radius: 15px;
+
+        }
+
+
+        .detail-card h2 {
+
+            margin-bottom: 15px;
+
+            color: #2d1b12;
+
+            font-size: 17px;
+
+        }
+
+
+        .detail-card ul {
+
+            padding-left: 18px;
+
+        }
+
+
+        .detail-card li {
+
+            margin-bottom: 8px;
+
+            color: #6f5d54;
+
+            font-size: 10px;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* =====================================
+           NUTRITION
+        ===================================== */
+
+        .nutrition-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 10px;
+
+        }
+
+
+        .nutrition-item {
+
+            padding: 12px;
+
+            border-radius: 8px;
+
+            background: #fff8f0;
+
+            text-align: center;
+
+        }
+
+
+        .nutrition-item strong {
+
+            display: block;
+
+            margin-bottom: 3px;
+
+            color: #ff6b35;
+
+            font-size: 14px;
+
+        }
+
+
+        .nutrition-item span {
+
+            color: #8a766c;
+
+            font-size: 8px;
+
+        }
+
+
+        /* =====================================
+           RESPONSIVE
+        ===================================== */
+
+        @media (max-width: 800px) {
+
+            .product-container {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .product-image {
+
+                height: 350px;
+
+            }
+
+
+            .details-section {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .product-page {
+
+                padding: 40px 0 60px;
+
+            }
+
+
+            .product-container {
+
+                padding: 15px;
+
+            }
+
+
+            .product-info h1 {
+
+                font-size: 27px;
+
+            }
+
+
+            .product-image {
+
+                height: 280px;
+
+            }
+
+
+            .product-actions {
+
+                flex-direction: column;
+
+            }
+
+
+            .wishlist-btn {
+
+                width: 100%;
+
+                height: 45px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         NAVBAR
+    ===================================== -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                🍕 FreshBite
+            </a>
+
+
+            <nav class="nav-menu">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="restaurants.html">
+                    Restaurants
+                </a>
+
+                <a href="menu.html">
+                    Menu
+                </a>
+
+                <a href="cart.html">
+
+                    Cart
+
+                    <span class="cart-count">
+                        0
+                    </span>
+
+                </a>
+
+                <a href="account.html">
+                    Account
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <div class="nav-actions">
+
+                <a
+                    href="login.html"
+                    class="login-btn"
+                >
+                    Login
+                </a>
+
+                <a
+                    href="register.html"
+                    class="signup-btn"
+                >
+                    Sign Up
+                </a>
+
+            </div>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================
+         PRODUCT PAGE
+    ===================================== -->
+
+    <main>
+
+        <section class="product-page">
+
+            <div class="container">
+
+
+                <div class="breadcrumb">
+
+                    <a href="menu.html">
+                        Menu
+                    </a>
+
+                    &nbsp; / &nbsp;
+
+                    Product Details
+
+                </div>
+
+
+                <div
+                    class="product-container"
+                    id="productContainer"
+                >
+
+                    <!-- JavaScript loads product -->
+
+                </div>
+
+
+                <div
+                    class="details-section"
+                    id="detailsSection"
+                >
+
+                    <!-- JavaScript loads details -->
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ===================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-about">
+
+                <a
+                    href="index.html"
+                    class="logo"
+                >
+                    🍕 FreshBite
+                </a>
+
+                <p>
+                    Delicious food delivered fresh
+                    to your doorstep.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="restaurants.html">
+                    Restaurants
+                </a>
+
+                <a href="menu.html">
+                    Menu
+                </a>
+
+                <a href="cart.html">
+                    Cart
+                </a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Account
+                </h3>
+
+                <a href="account.html">
+                    My Account
+                </a>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    📍 Chennai, Tamil Nadu
+                </p>
+
+                <p>
+                    📞 +91 98765 43210
+                </p>
+
+                <p>
+                    ✉️ hello@freshbite.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <p>
+                    © 2026 FreshBite.
+                    All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="js/script.js"></script>
+
+
+    <script>
+
+        /* =====================================
+           PRODUCT DATA
+        ===================================== */
+
+        const products = {
+
+            1: {
+
+                name: "Margherita Pizza",
+
+                restaurant: "Pizza Paradise",
+
+                price: 299,
+
+                image:
+                    "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=80",
+
+                description:
+                    "A classic Italian-style pizza topped with fresh tomatoes, mozzarella cheese and aromatic basil. Perfect for a delicious meal.",
+
+                ingredients: [
+                    "Pizza dough",
+                    "Tomato sauce",
+                    "Mozzarella cheese",
+                    "Fresh basil",
+                    "Olive oil",
+                    "Italian herbs"
+                ],
+
+                tags: [
+                    "Vegetarian",
+                    "Fresh",
+                    "Chef Special"
+                ],
+
+                nutrition: {
+                    calories: "280 kcal",
+                    protein: "12 g",
+                    carbs: "36 g",
+                    fat: "10 g"
+                }
+
+            },
+
+
+            2: {
+
+                name: "Chicken Burger",
+
+                restaurant: "Burger House",
+
+                price: 199,
+
+                image:
+                    "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80",
+
+                description:
+                    "Juicy chicken patty served in a soft burger bun with fresh vegetables and a creamy signature sauce.",
+
+                ingredients: [
+                    "Chicken patty",
+                    "Burger bun",
+                    "Lettuce",
+                    "Tomato",
+                    "Cheese",
+                    "Signature sauce"
+                ],
+
+                tags: [
+                    "Non-Veg",
+                    "Popular",
+                    "Fresh"
+                ],
+
+                nutrition: {
+                    calories: "420 kcal",
+                    protein: "25 g",
+                    carbs: "38 g",
+                    fat: "18 g"
+                }
+
+            },
+
+
+            3: {
+
+                name: "Chicken Biryani",
+
+                restaurant: "Spice Hub",
+
+                price: 249,
+
+                image:
+                    "https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=800&q=80",
+
+                description:
+                    "Aromatic basmati rice cooked with tender chicken, traditional spices and herbs for a rich and flavorful biryani.",
+
+                ingredients: [
+                    "Basmati rice",
+                    "Chicken",
+                    "Onion",
+                    "Tomato",
+                    "Ginger garlic",
+                    "Biryani spices",
+                    "Fresh herbs"
+                ],
+
+                tags: [
+                    "Non-Veg",
+                    "Spicy",
+                    "Best Seller"
+                ],
+
+                nutrition: {
+                    calories: "510 kcal",
+                    protein: "28 g",
+                    carbs: "58 g",
+                    fat: "17 g"
+                }
+
+            },
+
+
+            4: {
+
+                name: "Chocolate Cake",
+
+                restaurant: "Sweet Treats",
+
+                price: 149,
+
+                image:
+                    "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80",
+
+                description:
+                    "Soft and delicious chocolate cake with rich chocolate layers and a smooth creamy topping.",
+
+                ingredients: [
+                    "Wheat flour",
+                    "Cocoa powder",
+                    "Sugar",
+                    "Milk",
+                    "Butter",
+                    "Chocolate"
+                ],
+
+                tags: [
+                    "Dessert",
+                    "Sweet",
+                    "Popular"
+                ],
+
+                nutrition: {
+                    calories: "340 kcal",
+                    protein: "5 g",
+                    carbs: "46 g",
+                    fat: "15 g"
+                }
+
+            },
+
+
+            5: {
+
+                name: "Paneer Tikka",
+
+                restaurant: "Spice Hub",
+
+                price: 229,
+
+                image:
+                    "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=80",
+
+                description:
+                    "Soft paneer cubes marinated with Indian spices and grilled to perfection.",
+
+                ingredients: [
+                    "Paneer",
+                    "Capsicum",
+                    "Onion",
+                    "Yogurt",
+                    "Indian spices",
+                    "Lemon"
+                ],
+
+                tags: [
+                    "Vegetarian",
+                    "Protein Rich",
+                    "Grilled"
+                ],
+
+                nutrition: {
+                    calories: "310 kcal",
+                    protein: "18 g",
+                    carbs: "12 g",
+                    fat: "20 g"
+                }
+
+            },
+
+
+            6: {
+
+                name: "Veg Noodles",
+
+                restaurant: "Dragon Wok",
+
+                price: 179,
+
+                image:
+                    "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80",
+
+                description:
+                    "Stir-fried noodles loaded with fresh vegetables and flavorful Asian-style sauce.",
+
+                ingredients: [
+                    "Noodles",
+                    "Carrot",
+                    "Capsicum",
+                    "Cabbage",
+                    "Spring onion",
+                    "Soy sauce"
+                ],
+
+                tags: [
+                    "Vegetarian",
+                    "Quick Meal",
+                    "Fresh"
+                ],
+
+                nutrition: {
+                    calories: "330 kcal",
+                    protein: "9 g",
+                    carbs: "48 g",
+                    fat: "11 g"
+                }
+
+            },
+
+            7: {
+
+                name: "Chicken Fried Rice",
+
+                restaurant: "Dragon Wok",
+
+                price: 219,
+
+                image:
+                    "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80",
+
+                description:
+                    "Flavorful fried rice tossed with tender chicken pieces, fresh vegetables and aromatic seasonings.",
+
+                ingredients: [
+                    "Rice",
+                    "Chicken",
+                    "Egg",
+                    "Carrot",
+                    "Spring onion",
+                    "Soy sauce"
+                ],
+
+                tags: [
+                    "Non-Veg",
+                    "Popular",
+                    "Asian"
+                ],
+
+                nutrition: {
+                    calories: "450 kcal",
+                    protein: "22 g",
+                    carbs: "52 g",
+                    fat: "15 g"
+                }
+
+            }
+
+        };
+
+
+        /* =====================================
+           GET PRODUCT ID
+        ===================================== */
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const productId =
+            params.get("id") || "1";
+
+
+        const product =
+            products[productId] ||
+            products[1];
+
+
+        let quantity = 1;
+
+
+        /* =====================================
+           LOAD PRODUCT
+        ===================================== */
+
+        function loadProduct() {
+
+            const container =
+                document.getElementById(
+                    "productContainer"
+                );
+
+
+            container.innerHTML = `
+
+                <div class="product-image">
+
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                    >
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <div class="restaurant-name">
+
+                        ${product.restaurant}
+
+                    </div>
+
+
+                    <h1>
+                        ${product.name}
+                    </h1>
+
+
+                    <div class="rating">
+
+                        <span class="stars">
+                            ★★★★★
+                        </span>
+
+                        <span class="rating-text">
+                            4.8 / 5
+                        </span>
+
+                    </div>
+
+
+                    <p class="description">
+
+                        ${product.description}
+
+                    </p>
+
+
+                    <div class="price">
+
+                        ₹${product.price}
+
+                    </div>
+
+
+                    <div class="tags">
+
+                        ${product.tags.map(
+
+                            function(tag) {
+
+                                return `
+
+                                    <span class="tag ${
+                                        tag.toLowerCase()
+                                            .includes("veg")
+                                            ? "veg"
+                                            : ""
+                                    }">
+
+                                        ${tag}
+
+                                    </span>
+
+                                `;
+
+                            }
+
+                        ).join("")}
+
+                    </div>
+
+
+                    <div class="quantity-section">
+
+                        <label>
+                            Quantity
+                        </label>
+
+                        <div class="quantity-control">
+
+                            <button
+                                onclick="changeProductQuantity(-1)"
+                            >
+                                −
+                            </button>
+
+                            <span id="productQuantity">
+                                1
+                            </span>
+
+                            <button
+                                onclick="changeProductQuantity(1)"
+                            >
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-actions">
+
+                        <button
+                            class="add-cart-btn"
+                            onclick="addProductToCart()"
+                        >
+
+                            🛒 Add to Cart
+
+                        </button>
+
+
+                        <button
+                            class="wishlist-btn"
+                            onclick="addProductToWishlist()"
+                            title="Add to Wishlist"
+                        >
+
+                            ♡
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="delivery-info">
+
+                        🚚 <strong>Delivery:</strong>
+                        Estimated delivery within
+                        30–45 minutes.
+
+                        <br>
+
+                        🔒 Safe and secure ordering.
+
+                    </div>
+
+                </div>
+
+            `;
+
+
+            loadProductDetails();
+
+        }
+
+
+        /* =====================================
+           LOAD DETAILS
+        ===================================== */
+
+        function loadProductDetails() {
+
+            const section =
+                document.getElementById(
+                    "detailsSection"
+                );
+
+
+            section.innerHTML = `
+
+                <div class="detail-card">
+
+                    <h2>
+                        🥗 Ingredients
+                    </h2>
+
+                    <ul>
+
+                        ${product.ingredients.map(
+
+                            function(item) {
+
+                                return `
+                                    <li>
+                                        ${item}
+                                    </li>
+                                `;
+
+                            }
+
+                        ).join("")}
+
+                    </ul>
+
+                </div>
+
+
+                <div class="detail-card">
+
+                    <h2>
+                        📊 Nutritional Information
+                    </h2>
+
+
+                    <div class="nutrition-grid">
+
+                        <div class="nutrition-item">
+
+                            <strong>
+                                ${product.nutrition.calories}
+                            </strong>
+
+                            <span>
+                                Calories
+                            </span>
+
+                        </div>
+
+
+                        <div class="nutrition-item">
+
+                            <strong>
+                                ${product.nutrition.protein}
+                            </strong>
+
+                            <span>
+                                Protein
+                            </span>
+
+                        </div>
+
+
+                        <div class="nutrition-item">
+
+                            <strong>
+                                ${product.nutrition.carbs}
+                            </strong>
+
+                            <span>
+                                Carbohydrates
+                            </span>
+
+                        </div>
+
+
+                        <div class="nutrition-item">
+
+                            <strong>
+                                ${product.nutrition.fat}
+                            </strong>
+
+                            <span>
+                                Fat
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+
+        /* =====================================
+           QUANTITY
+        ===================================== */
+
+        function changeProductQuantity(
+            change
+        ) {
+
+            quantity += change;
+
+
+            if (quantity < 1) {
+
+                quantity = 1;
+
+            }
+
+
+            document.getElementById(
+                "productQuantity"
+            ).textContent =
+                quantity;
+
+        }
+
+
+        /* =====================================
+           ADD TO CART
+        ===================================== */
+
+        function addProductToCart() {
+
+            let cart =
+                JSON.parse(
+                    localStorage.getItem(
+                        "freshBiteCart"
+                    )
+                ) || [];
+
+
+            const existing =
+                cart.find(
+
+                    function(item) {
+
+                        return Number(item.id)
+                            === Number(productId);
+
+                    }
+
+                );
+
+
+            if (existing) {
+
+                existing.quantity +=
+                    quantity;
+
+            } else {
+
+                cart.push({
+
+                    id:
+                        Number(productId),
+
+                    name:
+                        product.name,
+
+                    price:
+                        product.price,
+
+                    restaurant:
+                        product.restaurant,
+
+                    quantity:
+                        quantity
+
+                });
+
+            }
+
+
+            localStorage.setItem(
+
+                "freshBiteCart",
+
+                JSON.stringify(
+                    cart
+                )
+
+            );
+
+
+            updateProductCartCount();
+
+
+            alert(
+                `${quantity} × ${product.name} added to cart! 🛒`
+            );
+
+
+            quantity = 1;
+
+
+            document.getElementById(
+                "productQuantity"
+            ).textContent =
+                "1";
+
+        }
+
+
+        /* =====================================
+           WISHLIST
+        ===================================== */
+
+        function addProductToWishlist() {
+
+            let wishlist =
+                JSON.parse(
+                    localStorage.getItem(
+                        "freshBiteWishlist"
+                    )
+                ) || [];
+
+
+            const exists =
+                wishlist.some(
+
+                    function(item) {
+
+                        return Number(item.id)
+                            === Number(productId);
+
+                    }
+
+                );
+
+
+            if (exists) {
+
+                alert(
+                    "❤️ This item is already in your wishlist."
+                );
+
+                return;
+
+            }
+
+
+            wishlist.push({
+
+                id:
+                    Number(productId),
+
+                name:
+                    product.name,
+
+                price:
+                    product.price,
+
+                restaurant:
+                    product.restaurant
+
+            });
+
+
+            localStorage.setItem(
+
+                "freshBiteWishlist",
+
+                JSON.stringify(
+                    wishlist
+                )
+
+            );
+
+
+            alert(
+                "❤️ Added to Wishlist!"
+            );
+
+        }
+
+
+        /* =====================================
+           CART COUNT
+        ===================================== */
+
+        function updateProductCartCount() {
+
+            const cart =
+                JSON.parse(
+                    localStorage.getItem(
+                        "freshBiteCart"
+                    )
+                ) || [];
+
+
+            const total =
+                cart.reduce(
+
+                    function(
+                        sum,
+                        item
+                    ) {
+
+                        return sum +
+                            Number(
+                                item.quantity || 0
+                            );
+
+                    },
+
+                    0
+
+                );
+
+
+            document
+                .querySelectorAll(
+                    ".cart-count"
+                )
+                .forEach(
+
+                    function(element) {
+
+                        element.textContent =
+                            total;
+
+                    }
+
+                );
+
+        }
+
+
+        /* =====================================
+           INITIALIZE
+        ===================================== */
+
+        document.addEventListener(
+
+            "DOMContentLoaded",
+
+            function() {
+
+                loadProduct();
+
+                updateProductCartCount();
+
+            }
+
+        );
+
+    </script>
+
+
+</body>
+
+</html>

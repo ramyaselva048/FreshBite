@@ -1,0 +1,2780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>FreshBite - Menu</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <style>
+
+        /* =========================================
+           MENU PAGE
+        ========================================== */
+
+        .menu-page {
+
+            min-height: 75vh;
+
+            padding: 65px 0 90px;
+
+            background: #fff8f0;
+
+        }
+
+
+        .menu-header {
+
+            margin-bottom: 35px;
+
+            text-align: center;
+
+        }
+
+
+        .menu-header span {
+
+            display: inline-block;
+
+            margin-bottom: 8px;
+
+            color: #ff6b35;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .menu-header h1 {
+
+            margin-bottom: 10px;
+
+            color: #2d1b12;
+
+            font-size: 40px;
+
+        }
+
+
+        .menu-header p {
+
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #5c4a42;
+
+            font-size: 13px;
+
+        }
+
+
+        /* =========================================
+           RESTAURANT INFO
+        ========================================== */
+
+        .selected-restaurant {
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            padding: 15px 18px;
+
+            margin-bottom: 25px;
+
+            border: 1px solid #f0d9ca;
+
+            border-radius: 12px;
+
+            background: #ffffff;
+
+        }
+
+
+        .selected-restaurant.show {
+
+            display: flex;
+
+        }
+
+
+        .selected-restaurant-info {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+
+        .restaurant-icon {
+
+            width: 42px;
+
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: #fff0e8;
+
+            font-size: 20px;
+
+        }
+
+
+        .selected-restaurant-info h3 {
+
+            margin-bottom: 2px;
+
+            color: #2d1b12;
+
+            font-size: 14px;
+
+        }
+
+
+        .selected-restaurant-info p {
+
+            color: #8a766c;
+
+            font-size: 10px;
+
+        }
+
+
+        .all-restaurants-btn {
+
+            padding: 8px 13px;
+
+            border: 1px solid #ff6b35;
+
+            border-radius: 8px;
+
+            background: transparent;
+
+            color: #ff6b35;
+
+            font-family: inherit;
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+            text-decoration: none;
+
+        }
+
+
+        .all-restaurants-btn:hover {
+
+            background: #ff6b35;
+
+            color: #ffffff;
+
+        }
+
+
+        /* =========================================
+           SEARCH
+        ========================================== */
+
+        .menu-search {
+
+            position: relative;
+
+            max-width: 700px;
+
+            margin: 0 auto 25px;
+
+        }
+
+
+        .menu-search input {
+
+            width: 100%;
+
+            padding: 15px 50px 15px 18px;
+
+            border: 1px solid #f0d9ca;
+
+            border-radius: 50px;
+
+            outline: none;
+
+            background: #ffffff;
+
+            color: #2d1b12;
+
+            font-family: inherit;
+
+            font-size: 12px;
+
+        }
+
+
+        .menu-search input:focus {
+
+            border-color: #ff6b35;
+
+        }
+
+
+        .search-icon {
+
+            position: absolute;
+
+            top: 50%;
+
+            right: 18px;
+
+            transform: translateY(-50%);
+
+        }
+
+
+        /* =========================================
+           CATEGORY
+        ========================================== */
+
+        .category-filter {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .category-btn {
+
+            padding: 8px 15px;
+
+            border: 1px solid #f0d9ca;
+
+            border-radius: 50px;
+
+            background: #ffffff;
+
+            color: #5c4a42;
+
+            font-family: inherit;
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+        }
+
+
+        .category-btn:hover,
+
+        .category-btn.active {
+
+            border-color: #ff6b35;
+
+            background: #ff6b35;
+
+            color: #ffffff;
+
+        }
+
+
+        /* =========================================
+           FILTER
+        ========================================== */
+
+        .filter-box {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+
+            padding: 20px;
+
+            margin-bottom: 35px;
+
+            background: #ffffff;
+
+            border: 1px solid #f0d9ca;
+
+            border-radius: 15px;
+
+        }
+
+
+        .filter-group label {
+
+            display: block;
+
+            margin-bottom: 6px;
+
+            color: #2d1b12;
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+        }
+
+
+        .filter-group select {
+
+            width: 100%;
+
+            padding: 10px;
+
+            border: 1px solid #f0d9ca;
+
+            border-radius: 8px;
+
+            outline: none;
+
+            background: #fff8f0;
+
+            font-family: inherit;
+
+            font-size: 10px;
+
+        }
+
+
+        .reset-btn {
+
+            align-self: end;
+
+            padding: 10px;
+
+            border: 1px solid #ff6b35;
+
+            border-radius: 8px;
+
+            background: transparent;
+
+            color: #ff6b35;
+
+            font-family: inherit;
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+        }
+
+
+        .reset-btn:hover {
+
+            background: #ff6b35;
+
+            color: white;
+
+        }
+
+
+        /* =========================================
+           RESULT HEADER
+        ========================================== */
+
+        .result-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .result-header h2 {
+
+            color: #2d1b12;
+
+            font-size: 21px;
+
+        }
+
+
+        #foodCount {
+
+            color: #8a766c;
+
+            font-size: 10px;
+
+        }
+
+
+        /* =========================================
+           FOOD GRID
+        ========================================== */
+
+        .food-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .food-card {
+
+            overflow: hidden;
+
+            background: #ffffff;
+
+            border: 1px solid #f0d9ca;
+
+            border-radius: 16px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(45, 27, 18, 0.05);
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .food-card:hover {
+
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 10px 30px
+                rgba(45, 27, 18, 0.1);
+
+        }
+
+
+        .food-image {
+
+            position: relative;
+
+            height: 180px;
+
+            overflow: hidden;
+
+        }
+
+
+        .food-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.4s ease;
+
+        }
+
+
+        .food-card:hover img {
+
+            transform: scale(1.06);
+
+        }
+
+
+        .diet-badge {
+
+            position: absolute;
+
+            top: 10px;
+
+            left: 10px;
+
+            padding: 5px 8px;
+
+            border-radius: 50px;
+
+            background: white;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+        }
+
+
+        .veg {
+
+            color: #218739;
+
+        }
+
+
+        .nonveg {
+
+            color: #c94f36;
+
+        }
+
+
+        .gluten {
+
+            color: #7a5c20;
+
+        }
+
+
+        .food-content {
+
+            padding: 15px;
+
+        }
+
+
+        .food-category {
+
+            color: #ff6b35;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+        }
+
+
+        .food-content h3 {
+
+            margin: 5px 0;
+
+            color: #2d1b12;
+
+            font-size: 15px;
+
+        }
+
+
+        .food-content p {
+
+            min-height: 35px;
+
+            margin-bottom: 9px;
+
+            color: #5c4a42;
+
+            font-size: 9px;
+
+            line-height: 1.6;
+
+        }
+
+
+        .food-tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 5px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .food-tag {
+
+            padding: 4px 6px;
+
+            border-radius: 5px;
+
+            background: #fff0e8;
+
+            color: #8a766c;
+
+            font-size: 8px;
+
+        }
+
+
+        .food-info {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 11px;
+
+        }
+
+
+        .rating {
+
+            color: #5c4a42;
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+        }
+
+
+        .price {
+
+            color: #ff6b35;
+
+            font-size: 17px;
+
+            font-weight: 800;
+
+        }
+
+
+        .add-cart-btn {
+
+            width: 100%;
+
+            padding: 9px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #2d1b12;
+
+            color: white;
+
+            font-family: inherit;
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+        }
+
+
+        .add-cart-btn:hover {
+
+            background: #ff6b35;
+
+        }
+
+
+        /* =========================================
+           NO RESULT
+        ========================================== */
+
+        .no-result {
+
+            grid-column: 1 / -1;
+
+            padding: 60px 20px;
+
+            text-align: center;
+
+            background: white;
+
+            border: 1px solid #f0d9ca;
+
+            border-radius: 15px;
+
+        }
+
+
+        .no-result div {
+
+            margin-bottom: 10px;
+
+            font-size: 45px;
+
+        }
+
+
+        .no-result h3 {
+
+            margin-bottom: 5px;
+
+            color: #2d1b12;
+
+        }
+
+
+        .no-result p {
+
+            color: #8a766c;
+
+            font-size: 11px;
+
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================== */
+
+        @media (max-width: 1050px) {
+
+            .food-grid {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 800px) {
+
+            .food-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+            .filter-box {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 550px) {
+
+            .menu-page {
+
+                padding: 45px 0 60px;
+
+            }
+
+            .menu-header h1 {
+
+                font-size: 30px;
+
+            }
+
+            .food-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .filter-box {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .selected-restaurant {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                🍕 FreshBite
+            </a>
+
+
+            <nav class="nav-menu">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="restaurants.html">
+                    Restaurants
+                </a>
+
+                <a
+                    href="menu.html"
+                    class="active"
+                >
+                    Menu
+                </a>
+
+                <a href="cart.html">
+
+                    Cart
+
+                    <span class="cart-count">
+                        0
+                    </span>
+
+                </a>
+
+                <a href="account.html">
+                    Account
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <div class="nav-actions">
+
+                <a
+                    href="login.html"
+                    class="login-btn"
+                >
+                    Login
+                </a>
+
+                <a
+                    href="register.html"
+                    class="signup-btn"
+                >
+                    Sign Up
+                </a>
+
+            </div>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MENU
+    ========================================== -->
+
+    <main>
+
+        <section class="menu-page">
+
+            <div class="container">
+
+
+                <!-- HEADER -->
+
+                <div class="menu-header">
+
+                    <span>
+                        Fresh & Delicious
+                    </span>
+
+                    <h1 id="menuTitle">
+                        Explore Our Menu 🍽️
+                    </h1>
+
+                    <p>
+                        Discover delicious dishes from
+                        your favorite restaurants.
+                    </p>
+
+                </div>
+
+
+
+                <!-- SELECTED RESTAURANT -->
+
+                <div
+                    class="selected-restaurant"
+                    id="selectedRestaurantBox"
+                >
+
+                    <div class="selected-restaurant-info">
+
+                        <div class="restaurant-icon">
+                            🍽️
+                        </div>
+
+                        <div>
+
+                            <h3 id="selectedRestaurantName">
+                                Restaurant
+                            </h3>
+
+                            <p>
+                                Showing available dishes
+                                from this restaurant
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="restaurants.html"
+                        class="all-restaurants-btn"
+                    >
+                        ← All Restaurants
+                    </a>
+
+                </div>
+
+
+
+                <!-- SEARCH -->
+
+                <div class="menu-search">
+
+                    <input
+                        type="search"
+                        id="foodSearch"
+                        placeholder="Search food..."
+                    >
+
+                    <span class="search-icon">
+                        🔍
+                    </span>
+
+                </div>
+
+
+
+                <!-- CATEGORY -->
+
+                <div class="category-filter">
+
+                    <button
+                        class="category-btn active"
+                        data-category="all"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        class="category-btn"
+                        data-category="Pizza"
+                    >
+                        🍕 Pizza
+                    </button>
+
+                    <button
+                        class="category-btn"
+                        data-category="Burger"
+                    >
+                        🍔 Burger
+                    </button>
+
+                    <button
+                        class="category-btn"
+                        data-category="Indian"
+                    >
+                        🍛 Indian
+                    </button>
+
+                    <button
+                        class="category-btn"
+                        data-category="Chinese"
+                    >
+                        🍜 Chinese
+                    </button>
+
+                    <button
+                        class="category-btn"
+                        data-category="Dessert"
+                    >
+                        🍰 Dessert
+                    </button>
+
+                    <button
+                        class="category-btn"
+                        data-category="Drinks"
+                    >
+                        🥤 Drinks
+                    </button>
+
+                </div>
+
+
+
+                <!-- FILTERS -->
+
+                <div class="filter-box">
+
+
+                    <div class="filter-group">
+
+                        <label>
+                            Dietary Preference
+                        </label>
+
+                        <select id="dietFilter">
+
+                            <option value="all">
+                                All
+                            </option>
+
+                            <option value="Veg">
+                                🟢 Vegetarian
+                            </option>
+
+                            <option value="Non-Veg">
+                                🔴 Non-Vegetarian
+                            </option>
+
+                            <option value="Gluten-Free">
+                                🟡 Gluten-Free
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label>
+                            Rating
+                        </label>
+
+                        <select id="ratingFilter">
+
+                            <option value="0">
+                                All Ratings
+                            </option>
+
+                            <option value="4.5">
+                                ⭐ 4.5+
+                            </option>
+
+                            <option value="4">
+                                ⭐ 4.0+
+                            </option>
+
+                            <option value="3.5">
+                                ⭐ 3.5+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label>
+                            Price
+                        </label>
+
+                        <select id="priceFilter">
+
+                            <option value="all">
+                                All Prices
+                            </option>
+
+                            <option value="low">
+                                Under ₹200
+                            </option>
+
+                            <option value="medium">
+                                ₹200 - ₹300
+                            </option>
+
+                            <option value="high">
+                                Above ₹300
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button
+                        class="reset-btn"
+                        id="resetBtn"
+                    >
+                        Reset Filters
+                    </button>
+
+                </div>
+
+
+
+                <!-- RESULT -->
+
+                <div class="result-header">
+
+                    <h2>
+                        Popular Dishes
+                    </h2>
+
+                    <span id="foodCount">
+                        12 Items
+                    </span>
+
+                </div>
+
+
+
+                <!-- FOOD GRID -->
+
+                <div
+                    class="food-grid"
+                    id="foodGrid"
+                >
+
+
+                    <!-- =================================
+                         FOOD 1
+                    ================================== -->
+
+                    <article
+                        class="food-card"
+                        data-name="Margherita Pizza"
+                        data-category="Pizza"
+                        data-diet="Veg"
+                        data-rating="4.8"
+                        data-price="299"
+                        data-restaurant="Pizza Paradise"
+                    >
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=700&q=80"
+                                alt="Margherita Pizza"
+                            >
+
+                            <span class="diet-badge veg">
+                                🟢 Veg
+                            </span>
+
+                        </div>
+
+                        <div class="food-content">
+
+                            <span class="food-category">
+                                Pizza
+                            </span>
+
+                            <h3>
+                                Margherita Pizza
+                            </h3>
+
+                            <p>
+                                Fresh tomato, mozzarella cheese
+                                and basil.
+                            </p>
+
+                            <div class="food-tags">
+
+                                <span class="food-tag">
+                                    Vegetarian
+                                </span>
+
+                                <span class="food-tag">
+                                    Fresh
+                                </span>
+
+                            </div>
+
+                            <div class="food-info">
+
+                                <span class="rating">
+                                    ⭐ 4.8
+                                </span>
+
+                                <span class="price">
+                                    ₹299
+                                </span>
+
+                            </div>
+
+                            <button
+                                class="add-cart-btn"
+                                onclick="addToCart(1)"
+                            >
+                                🛒 Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- FOOD 2 -->
+
+                    <article
+                        class="food-card"
+                        data-name="Pepperoni Pizza"
+                        data-category="Pizza"
+                        data-diet="Non-Veg"
+                        data-rating="4.7"
+                        data-price="349"
+                        data-restaurant="Pizza Paradise"
+                    >
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=700&q=80"
+                                alt="Pepperoni Pizza"
+                            >
+
+                            <span class="diet-badge nonveg">
+                                🔴 Non-Veg
+                            </span>
+
+                        </div>
+
+                        <div class="food-content">
+
+                            <span class="food-category">
+                                Pizza
+                            </span>
+
+                            <h3>
+                                Pepperoni Pizza
+                            </h3>
+
+                            <p>
+                                Cheesy pizza topped with
+                                delicious pepperoni.
+                            </p>
+
+                            <div class="food-tags">
+
+                                <span class="food-tag">
+                                    Non-Veg
+                                </span>
+
+                                <span class="food-tag">
+                                    Bestseller
+                                </span>
+
+                            </div>
+
+                            <div class="food-info">
+
+                                <span class="rating">
+                                    ⭐ 4.7
+                                </span>
+
+                                <span class="price">
+                                    ₹349
+                                </span>
+
+                            </div>
+
+                            <button
+                                class="add-cart-btn"
+                                onclick="addToCart(9)"
+                            >
+                                🛒 Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- FOOD 3 -->
+
+                    <article
+                        class="food-card"
+                        data-name="Chicken Burger"
+                        data-category="Burger"
+                        data-diet="Non-Veg"
+                        data-rating="4.7"
+                        data-price="199"
+                        data-restaurant="Burger House"
+                    >
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80"
+                                alt="Chicken Burger"
+                            >
+
+                            <span class="diet-badge nonveg">
+                                🔴 Non-Veg
+                            </span>
+
+                        </div>
+
+                        <div class="food-content">
+
+                            <span class="food-category">
+                                Burger
+                            </span>
+
+                            <h3>
+                                Chicken Burger
+                            </h3>
+
+                            <p>
+                                Crispy chicken with fresh
+                                vegetables and sauce.
+                            </p>
+
+                            <div class="food-tags">
+
+                                <span class="food-tag">
+                                    Non-Veg
+                                </span>
+
+                                <span class="food-tag">
+                                    Popular
+                                </span>
+
+                            </div>
+
+                            <div class="food-info">
+
+                                <span class="rating">
+                                    ⭐ 4.7
+                                </span>
+
+                                <span class="price">
+                                    ₹199
+                                </span>
+
+                            </div>
+
+                            <button
+                                class="add-cart-btn"
+                                onclick="addToCart(2)"
+                            >
+                                🛒 Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- FOOD 4 -->
+
+                    <article
+                        class="food-card"
+                        data-name="Veg Burger"
+                        data-category="Burger"
+                        data-diet="Veg"
+                        data-rating="4.5"
+                        data-price="179"
+                        data-restaurant="Burger House"
+                    >
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1520072959219-c595dc870360?auto=format&fit=crop&w=700&q=80"
+                                alt="Veg Burger"
+                            >
+
+                            <span class="diet-badge veg">
+                                🟢 Veg
+                            </span>
+
+                        </div>
+
+                        <div class="food-content">
+
+                            <span class="food-category">
+                                Burger
+                            </span>
+
+                            <h3>
+                                Veg Burger
+                            </h3>
+
+                            <p>
+                                Crispy vegetable patty with
+                                fresh salad.
+                            </p>
+
+                            <div class="food-tags">
+
+                                <span class="food-tag">
+                                    Vegetarian
+                                </span>
+
+                            </div>
+
+                            <div class="food-info">
+
+                                <span class="rating">
+                                    ⭐ 4.5
+                                </span>
+
+                                <span class="price">
+                                    ₹179
+                                </span>
+
+                            </div>
+
+                            <button
+                                class="add-cart-btn"
+                                onclick="addToCart(10)"
+                            >
+                                🛒 Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- FOOD 5 -->
+
+                    <article
+                        class="food-card"
+                        data-name="Chicken Biryani"
+                        data-category="Indian"
+                        data-diet="Non-Veg"
+                        data-rating="4.9"
+                        data-price="249"
+                        data-restaurant="Spice Hub"
+                    >
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=700&q=80"
+                                alt="Chicken Biryani"
+                            >
+
+                            <span class="diet-badge nonveg">
+                                🔴 Non-Veg
+                            </span>
+
+                        </div>
+
+                        <div class="food-content">
+
+                            <span class="food-category">
+                                Indian
+                            </span>
+
+                            <h3>
+                                Chicken Biryani
+                            </h3>
+
+                            <p>
+                                Aromatic basmati rice with
+                                tender chicken.
+                            </p>
+
+                            <div class="food-tags">
+
+                                <span class="food-tag">
+                                    Non-Veg
+                                </span>
+
+                                <span class="food-tag">
+                                    Bestseller
+                                </span>
+
+                            </div>
+
+                            <div class="food-info">
+
+                                <span class="rating">
+                                    ⭐ 4.9
+                                </span>
+
+                                <span class="price">
+                                    ₹249
+                                </span>
+
+                            </div>
+
+                            <button
+                                class="add-cart-btn"
+                                onclick="addToCart(3)"
+                            >
+                                🛒 Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- FOOD 6 -->
+
+                    <article
+                        class="food-card"
+                        data-name="Paneer Tikka"
+                        data-category="Indian"
+                        data-diet="Veg"
+                        data-rating="4.6"
+                        data-price="229"
+                        data-restaurant="Spice Hub"
+                    >
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=700&q=80"
+                                alt="Paneer Tikka"
+                            >
+
+                            <span class="diet-badge veg">
+                                🟢 Veg
+                            </span>
+
+                        </div>
+
+                        <div class="food-content">
+
+                            <span class="food-category">
+                                Indian
+                            </span>
+
+                            <h3>
+                                Paneer Tikka
+                            </h3>
+
+                            <p>
+                                Grilled paneer with aromatic
+                                Indian spices.
+                            </p>
+
+                            <div class="food-tags">
+
+                                <span class="food-tag">
+                                    Vegetarian
+                                </span>
+
+                            </div>
+
+                            <div class="food-info">
+
+                                <span class="rating">
+                                    ⭐ 4.6
+                                </span>
+
+                                <span class="price">
+                                    ₹229
+                                </span>
+
+                            </div>
+
+                            <button
+                                class="add-cart-btn"
+                                onclick="addToCart(5)"
+                            >
+                                🛒 Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- FOOD 7 -->
+
+                    <article
+                        class="food-card"
+                        data-name="Veg Noodles"
+                        data-category="Chinese"
+                        data-diet="Veg"
+                        data-rating="4.4"
+                        data-price="179"
+                        data-restaurant="Dragon Wok"
+                    >
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80"
+                                alt="Veg Noodles"
+                            >
+
+                            <span class="diet-badge veg">
+                                🟢 Veg
+                            </span>
+
+                        </div>
+
+                        <div class="food-content">
+
+                            <span class="food-category">
+                                Chinese
+                            </span>
+
+                            <h3>
+                                Veg Noodles
+                            </h3>
+
+                            <p>
+                                Stir-fried noodles with
+                                fresh vegetables.
+                            </p>
+
+                            <div class="food-tags">
+
+                                <span class="food-tag">
+                                    Vegetarian
+                                </span>
+
+                            </div>
+
+                            <div class="food-info">
+
+                                <span class="rating">
+                                    ⭐ 4.4
+                                </span>
+
+                                <span class="price">
+                                    ₹179
+                                </span>
+
+                            </div>
+
+                            <button
+                                class="add-cart-btn"
+                                onclick="addToCart(6)"
+                            >
+                                🛒 Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- FOOD 8 -->
+
+                    <article
+                        class="food-card"
+                        data-name="Chicken Fried Rice"
+                        data-category="Chinese"
+                        data-diet="Non-Veg"
+                        data-rating="4.6"
+                        data-price="219"
+                        data-restaurant="Dragon Wok"
+                    >
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=80"
+                                alt="Chicken Fried Rice"
+                            >
+
+                            <span class="diet-badge nonveg">
+                                🔴 Non-Veg
+                            </span>
+
+                        </div>
+
+                        <div class="food-content">
+
+                            <span class="food-category">
+                                Chinese
+                            </span>
+
+                            <h3>
+                                Chicken Fried Rice
+                            </h3>
+
+                            <p>
+                                Flavourful fried rice with
+                                tender chicken.
+                            </p>
+
+                            <div class="food-tags">
+
+                                <span class="food-tag">
+                                    Non-Veg
+                                </span>
+
+                            </div>
+
+                            <div class="food-info">
+
+                                <span class="rating">
+                                    ⭐ 4.6
+                                </span>
+
+                                <span class="price">
+                                    ₹219
+                                </span>
+
+                            </div>
+
+                            <button
+                                class="add-cart-btn"
+                                onclick="addToCart(11)"
+                            >
+                                🛒 Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- FOOD 9 -->
+
+                    <article
+                        class="food-card"
+                        data-name="Chocolate Cake"
+                        data-category="Dessert"
+                        data-diet="Veg"
+                        data-rating="4.6"
+                        data-price="149"
+                        data-restaurant="Sweet Treats"
+                    >
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80"
+                                alt="Chocolate Cake"
+                            >
+
+                            <span class="diet-badge veg">
+                                🟢 Veg
+                            </span>
+
+                        </div>
+
+                        <div class="food-content">
+
+                            <span class="food-category">
+                                Dessert
+                            </span>
+
+                            <h3>
+                                Chocolate Cake
+                            </h3>
+
+                            <p>
+                                Rich and creamy chocolate
+                                cake for sweet lovers.
+                            </p>
+
+                            <div class="food-tags">
+
+                                <span class="food-tag">
+                                    Vegetarian
+                                </span>
+
+                            </div>
+
+                            <div class="food-info">
+
+                                <span class="rating">
+                                    ⭐ 4.6
+                                </span>
+
+                                <span class="price">
+                                    ₹149
+                                </span>
+
+                            </div>
+
+                            <button
+                                class="add-cart-btn"
+                                onclick="addToCart(4)"
+                            >
+                                🛒 Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- FOOD 10 -->
+
+                    <article
+                        class="food-card"
+                        data-name="Gulab Jamun"
+                        data-category="Dessert"
+                        data-diet="Veg"
+                        data-rating="4.5"
+                        data-price="99"
+                        data-restaurant="Sweet Treats"
+                    >
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1666190094767-7d6e1c6a8c1f?auto=format&fit=crop&w=700&q=80"
+                                alt="Gulab Jamun"
+                            >
+
+                            <span class="diet-badge veg">
+                                🟢 Veg
+                            </span>
+
+                        </div>
+
+                        <div class="food-content">
+
+                            <span class="food-category">
+                                Dessert
+                            </span>
+
+                            <h3>
+                                Gulab Jamun
+                            </h3>
+
+                            <p>
+                                Soft traditional Indian sweet
+                                served warm.
+                            </p>
+
+                            <div class="food-tags">
+
+                                <span class="food-tag">
+                                    Vegetarian
+                                </span>
+
+                            </div>
+
+                            <div class="food-info">
+
+                                <span class="rating">
+                                    ⭐ 4.5
+                                </span>
+
+                                <span class="price">
+                                    ₹99
+                                </span>
+
+                            </div>
+
+                            <button
+                                class="add-cart-btn"
+                                onclick="addToCart(12)"
+                            >
+                                🛒 Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- FOOD 11 -->
+
+                    <article
+                        class="food-card"
+                        data-name="Fresh Fruit Bowl"
+                        data-category="Drinks"
+                        data-diet="Gluten-Free"
+                        data-rating="4.3"
+                        data-price="159"
+                        data-restaurant="Healthy Bites"
+                    >
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=700&q=80"
+                                alt="Fresh Fruit Bowl"
+                            >
+
+                            <span class="diet-badge gluten">
+                                🟡 Gluten-Free
+                            </span>
+
+                        </div>
+
+                        <div class="food-content">
+
+                            <span class="food-category">
+                                Drinks
+                            </span>
+
+                            <h3>
+                                Fresh Fruit Bowl
+                            </h3>
+
+                            <p>
+                                Fresh seasonal fruits for
+                                a healthy snack.
+                            </p>
+
+                            <div class="food-tags">
+
+                                <span class="food-tag">
+                                    Gluten-Free
+                                </span>
+
+                                <span class="food-tag">
+                                    Healthy
+                                </span>
+
+                            </div>
+
+                            <div class="food-info">
+
+                                <span class="rating">
+                                    ⭐ 4.3
+                                </span>
+
+                                <span class="price">
+                                    ₹159
+                                </span>
+
+                            </div>
+
+                            <button
+                                class="add-cart-btn"
+                                onclick="addToCart(8)"
+                            >
+                                🛒 Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- FOOD 12 -->
+
+                    <article
+                        class="food-card"
+                        data-name="Mango Smoothie"
+                        data-category="Drinks"
+                        data-diet="Veg"
+                        data-rating="4.5"
+                        data-price="129"
+                        data-restaurant="Healthy Bites"
+                    >
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?auto=format&fit=crop&w=700&q=80"
+                                alt="Mango Smoothie"
+                            >
+
+                            <span class="diet-badge veg">
+                                🟢 Veg
+                            </span>
+
+                        </div>
+
+                        <div class="food-content">
+
+                            <span class="food-category">
+                                Drinks
+                            </span>
+
+                            <h3>
+                                Mango Smoothie
+                            </h3>
+
+                            <p>
+                                Fresh mango blended into
+                                a creamy smoothie.
+                            </p>
+
+                            <div class="food-tags">
+
+                                <span class="food-tag">
+                                    Vegetarian
+                                </span>
+
+                                <span class="food-tag">
+                                    Fresh
+                                </span>
+
+                            </div>
+
+                            <div class="food-info">
+
+                                <span class="rating">
+                                    ⭐ 4.5
+                                </span>
+
+                                <span class="price">
+                                    ₹129
+                                </span>
+
+                            </div>
+
+                            <button
+                                class="add-cart-btn"
+                                onclick="addToCart(13)"
+                            >
+                                🛒 Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+
+            <div class="footer-about">
+
+                <a
+                    href="index.html"
+                    class="logo"
+                >
+                    🍕 FreshBite
+                </a>
+
+                <p>
+                    Delicious food delivered fresh
+                    to your doorstep.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="restaurants.html">
+                    Restaurants
+                </a>
+
+                <a href="menu.html">
+                    Menu
+                </a>
+
+                <a href="cart.html">
+                    Cart
+                </a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Account
+                </h3>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="register.html">
+                    Register
+                </a>
+
+                <a href="account.html">
+                    My Account
+                </a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    📍 Chennai, Tamil Nadu
+                </p>
+
+                <p>
+                    📞 +91 98765 43210
+                </p>
+
+                <p>
+                    ✉️ hello@freshbite.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <p>
+                    © 2026 FreshBite.
+                    All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- MAIN JS -->
+
+    <script src="js/script.js"></script>
+
+
+
+    <!-- =========================================
+         MENU JAVASCRIPT
+    ========================================== -->
+
+    <script>
+
+
+        // =========================================
+        // GET RESTAURANT FROM URL
+        // =========================================
+
+        const urlParams =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const selectedRestaurant =
+            urlParams.get(
+                "restaurant"
+            );
+
+
+        const menuTitle =
+            document.getElementById(
+                "menuTitle"
+            );
+
+
+        const restaurantBox =
+            document.getElementById(
+                "selectedRestaurantBox"
+            );
+
+
+        const restaurantName =
+            document.getElementById(
+                "selectedRestaurantName"
+            );
+
+
+        // =========================================
+        // SHOW SELECTED RESTAURANT
+        // =========================================
+
+        if (selectedRestaurant) {
+
+            const decodedRestaurant =
+                selectedRestaurant.trim();
+
+
+            menuTitle.textContent =
+                decodedRestaurant +
+                " Menu 🍽️";
+
+
+            restaurantName.textContent =
+                decodedRestaurant;
+
+
+            restaurantBox.classList.add(
+                "show"
+            );
+
+        }
+
+
+
+        // =========================================
+        // ELEMENTS
+        // =========================================
+
+        const searchInput =
+            document.getElementById(
+                "foodSearch"
+            );
+
+
+        const dietFilter =
+            document.getElementById(
+                "dietFilter"
+            );
+
+
+        const ratingFilter =
+            document.getElementById(
+                "ratingFilter"
+            );
+
+
+        const priceFilter =
+            document.getElementById(
+                "priceFilter"
+            );
+
+
+        const foodCount =
+            document.getElementById(
+                "foodCount"
+            );
+
+
+        const foodGrid =
+            document.getElementById(
+                "foodGrid"
+            );
+
+
+        const foodCards =
+            Array.from(
+                document.querySelectorAll(
+                    ".food-card"
+                )
+            );
+
+
+        const categoryButtons =
+            document.querySelectorAll(
+                ".category-btn"
+            );
+
+
+        let selectedCategory =
+            "all";
+
+
+
+        // =========================================
+        // FILTER MENU
+        // =========================================
+
+        function filterMenu() {
+
+            const search =
+                searchInput.value
+                    .toLowerCase()
+                    .trim();
+
+
+            const diet =
+                dietFilter.value;
+
+
+            const minimumRating =
+                parseFloat(
+                    ratingFilter.value
+                );
+
+
+            const priceRange =
+                priceFilter.value;
+
+
+            let count = 0;
+
+
+            foodCards.forEach(
+                function (card) {
+
+
+                    const name =
+                        card.dataset.name
+                            .toLowerCase();
+
+
+                    const category =
+                        card.dataset.category;
+
+
+                    const cardDiet =
+                        card.dataset.diet;
+
+
+                    const rating =
+                        parseFloat(
+                            card.dataset.rating
+                        );
+
+
+                    const price =
+                        parseFloat(
+                            card.dataset.price
+                        );
+
+
+                    const restaurant =
+                        card.dataset.restaurant;
+
+
+
+                    // Search
+
+                    const searchMatch =
+                        name.includes(search) ||
+                        category
+                            .toLowerCase()
+                            .includes(search);
+
+
+
+                    // Category
+
+                    const categoryMatch =
+                        selectedCategory === "all" ||
+                        category === selectedCategory;
+
+
+
+                    // Diet
+
+                    const dietMatch =
+                        diet === "all" ||
+                        cardDiet === diet;
+
+
+
+                    // Rating
+
+                    const ratingMatch =
+                        rating >= minimumRating;
+
+
+
+                    // Price
+
+                    let priceMatch =
+                        true;
+
+
+                    if (
+                        priceRange === "low"
+                    ) {
+
+                        priceMatch =
+                            price < 200;
+
+                    }
+
+
+                    if (
+                        priceRange === "medium"
+                    ) {
+
+                        priceMatch =
+                            price >= 200 &&
+                            price <= 300;
+
+                    }
+
+
+                    if (
+                        priceRange === "high"
+                    ) {
+
+                        priceMatch =
+                            price > 300;
+
+                    }
+
+
+
+                    // Restaurant
+
+                    const restaurantMatch =
+                        !selectedRestaurant ||
+                        restaurant.toLowerCase() ===
+                        selectedRestaurant
+                            .trim()
+                            .toLowerCase();
+
+
+
+                    // Final
+
+                    if (
+
+                        searchMatch &&
+                        categoryMatch &&
+                        dietMatch &&
+                        ratingMatch &&
+                        priceMatch &&
+                        restaurantMatch
+
+                    ) {
+
+                        card.style.display =
+                            "block";
+
+                        count++;
+
+                    } else {
+
+                        card.style.display =
+                            "none";
+
+                    }
+
+                }
+            );
+
+
+
+            foodCount.textContent =
+                count +
+                (
+                    count === 1
+                        ? " Item"
+                        : " Items"
+                );
+
+
+
+            showNoResult(
+                count
+            );
+
+        }
+
+
+
+        // =========================================
+        // NO RESULT
+        // =========================================
+
+        function showNoResult(count) {
+
+            const oldMessage =
+                document.getElementById(
+                    "noResult"
+                );
+
+
+            if (count === 0) {
+
+                if (!oldMessage) {
+
+                    const message =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    message.id =
+                        "noResult";
+
+
+                    message.className =
+                        "no-result";
+
+
+                    message.innerHTML = `
+
+                        <div>
+                            😔
+                        </div>
+
+                        <h3>
+                            No Food Found
+                        </h3>
+
+                        <p>
+                            Try another restaurant,
+                            category or search.
+                        </p>
+
+                    `;
+
+
+                    foodGrid.appendChild(
+                        message
+                    );
+
+                }
+
+            } else {
+
+                if (oldMessage) {
+
+                    oldMessage.remove();
+
+                }
+
+            }
+
+        }
+
+
+
+        // =========================================
+        // SEARCH
+        // =========================================
+
+        searchInput.addEventListener(
+            "input",
+            filterMenu
+        );
+
+
+
+        // =========================================
+        // CATEGORY BUTTON
+        // =========================================
+
+        categoryButtons.forEach(
+            function (button) {
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+
+                        categoryButtons.forEach(
+                            function (btn) {
+
+                                btn.classList.remove(
+                                    "active"
+                                );
+
+                            }
+                        );
+
+
+                        button.classList.add(
+                            "active"
+                        );
+
+
+                        selectedCategory =
+                            button.dataset.category;
+
+
+                        filterMenu();
+
+                    }
+                );
+
+            }
+        );
+
+
+
+        // =========================================
+        // DROPDOWN FILTERS
+        // =========================================
+
+        dietFilter.addEventListener(
+            "change",
+            filterMenu
+        );
+
+
+        ratingFilter.addEventListener(
+            "change",
+            filterMenu
+        );
+
+
+        priceFilter.addEventListener(
+            "change",
+            filterMenu
+        );
+
+
+
+        // =========================================
+        // RESET
+        // =========================================
+
+        document
+            .getElementById("resetBtn")
+            .addEventListener(
+                "click",
+                function () {
+
+
+                    searchInput.value =
+                        "";
+
+
+                    dietFilter.value =
+                        "all";
+
+
+                    ratingFilter.value =
+                        "0";
+
+
+                    priceFilter.value =
+                        "all";
+
+
+                    selectedCategory =
+                        "all";
+
+
+                    categoryButtons.forEach(
+                        function (button) {
+
+                            button.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+
+                    document
+                        .querySelector(
+                            '[data-category="all"]'
+                        )
+                        .classList.add(
+                            "active"
+                        );
+
+
+                    filterMenu();
+
+                }
+            );
+
+
+
+        // =========================================
+        // INITIAL FILTER
+        // =========================================
+
+        filterMenu();
+
+    </script>
+
+
+</body>
+
+</html>
+
+
