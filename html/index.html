@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FreshBite - Online Food Ordering</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION BAR
+    ========================== -->
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                🍕 FreshBite
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="active">Home</a>
+                <a href="restaurants.html">Restaurants</a>
+                <a href="menu.html">Menu</a>
+                <a href="cart.html">
+                    Cart <span class="cart-count">0</span>
+                </a>
+                <a href="account.html">Account</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="register.html" class="signup-btn">Sign Up</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="menu-toggle" id="menuToggle">
+                ☰
+            </button>
+
+        </div>
+    </header>
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="container hero-content">
+
+                <div class="hero-text">
+
+                    <span class="hero-tag">
+                        🍴 Delicious Food, Delivered Fast
+                    </span>
+
+                    <h1>
+                        Your Favorite Food
+                        <span>Delivered Fresh</span>
+                    </h1>
+
+                    <p>
+                        Discover delicious meals from your favorite restaurants
+                        and get them delivered straight to your doorstep.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="menu.html" class="primary-btn">
+                            Explore Menu →
+                        </a>
+
+                        <a href="restaurants.html" class="secondary-btn">
+                            Find Restaurants
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <div class="hero-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"
+                        alt="Delicious food"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RESTAURANT CATEGORIES
+        ========================== -->
+        <section class="categories section">
+
+            <div class="container">
+
+                <div class="section-header">
+                    <span class="section-tag">Explore</span>
+
+                    <h2>
+                        Browse Food Categories
+                    </h2>
+
+                    <p>
+                        Choose from a variety of delicious food categories.
+                    </p>
+                </div>
+
+
+                <div class="category-grid">
+
+                    <a href="menu.html?category=pizza" class="category-card">
+                        <div class="category-icon">🍕</div>
+                        <h3>Pizza</h3>
+                        <p>25+ Items</p>
+                    </a>
+
+
+                    <a href="menu.html?category=burger" class="category-card">
+                        <div class="category-icon">🍔</div>
+                        <h3>Burgers</h3>
+                        <p>20+ Items</p>
+                    </a>
+
+
+                    <a href="menu.html?category=biryani" class="category-card">
+                        <div class="category-icon">🍛</div>
+                        <h3>Biryani</h3>
+                        <p>15+ Items</p>
+                    </a>
+
+
+                    <a href="menu.html?category=chinese" class="category-card">
+                        <div class="category-icon">🍜</div>
+                        <h3>Chinese</h3>
+                        <p>18+ Items</p>
+                    </a>
+
+
+                    <a href="menu.html?category=desserts" class="category-card">
+                        <div class="category-icon">🍰</div>
+                        <h3>Desserts</h3>
+                        <p>12+ Items</p>
+                    </a>
+
+
+                    <a href="menu.html?category=drinks" class="category-card">
+                        <div class="category-icon">🥤</div>
+                        <h3>Drinks</h3>
+                        <p>20+ Items</p>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FEATURED DISHES
+        ========================== -->
+        <section class="featured section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-tag">
+                        Popular
+                    </span>
+
+                    <h2>
+                        Featured Dishes
+                    </h2>
+
+                    <p>
+                        Our customers' favorite dishes, freshly prepared.
+                    </p>
+
+                </div>
+
+
+                <div class="food-grid">
+
+
+                    <!-- Food Card 1 -->
+                    <article class="food-card">
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=600&q=80"
+                                alt="Margherita Pizza"
+                            >
+
+                            <span class="food-badge">
+                                Bestseller
+                            </span>
+
+                        </div>
+
+
+                        <div class="food-content">
+
+                            <span class="food-category">
+                                Pizza
+                            </span>
+
+                            <h3>
+                                Margherita Pizza
+                            </h3>
+
+                            <p>
+                                Fresh tomato, mozzarella cheese and basil.
+                            </p>
+
+                            <div class="food-info">
+
+                                <span class="rating">
+                                    ⭐ 4.8
+                                </span>
+
+                                <span class="price">
+                                    ₹299
+                                </span>
+
+                            </div>
+
+                            <button
+                                class="add-cart-btn"
+                                onclick="addToCart(1)"
+                            >
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Food Card 2 -->
+                    <article class="food-card">
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80"
+                                alt="Chicken Burger"
+                            >
+
+                            <span class="food-badge">
+                                Popular
+                            </span>
+
+                        </div>
+
+
+                        <div class="food-content">
+
+                            <span class="food-category">
+                                Burger
+                            </span>
+
+                            <h3>
+                                Chicken Burger
+                            </h3>
+
+                            <p>
+                                Crispy chicken, fresh vegetables and special sauce.
+                            </p>
+
+                            <div class="food-info">
+
+                                <span class="rating">
+                                    ⭐ 4.7
+                                </span>
+
+                                <span class="price">
+                                    ₹199
+                                </span>
+
+                            </div>
+
+                            <button
+                                class="add-cart-btn"
+                                onclick="addToCart(2)"
+                            >
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Food Card 3 -->
+                    <article class="food-card">
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=600&q=80"
+                                alt="Chicken Biryani"
+                            >
+
+                            <span class="food-badge">
+                                Chef's Choice
+                            </span>
+
+                        </div>
+
+
+                        <div class="food-content">
+
+                            <span class="food-category">
+                                Indian
+                            </span>
+
+                            <h3>
+                                Chicken Biryani
+                            </h3>
+
+                            <p>
+                                Aromatic basmati rice cooked with tender chicken.
+                            </p>
+
+                            <div class="food-info">
+
+                                <span class="rating">
+                                    ⭐ 4.9
+                                </span>
+
+                                <span class="price">
+                                    ₹249
+                                </span>
+
+                            </div>
+
+                            <button
+                                class="add-cart-btn"
+                                onclick="addToCart(3)"
+                            >
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Food Card 4 -->
+                    <article class="food-card">
+
+                        <div class="food-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=600&q=80"
+                                alt="Chocolate Dessert"
+                            >
+
+                            <span class="food-badge">
+                                New
+                            </span>
+
+                        </div>
+
+
+                        <div class="food-content">
+
+                            <span class="food-category">
+                                Dessert
+                            </span>
+
+                            <h3>
+                                Chocolate Dessert
+                            </h3>
+
+                            <p>
+                                Rich and creamy chocolate dessert for sweet lovers.
+                            </p>
+
+                            <div class="food-info">
+
+                                <span class="rating">
+                                    ⭐ 4.6
+                                </span>
+
+                                <span class="price">
+                                    ₹149
+                                </span>
+
+                            </div>
+
+                            <button
+                                class="add-cart-btn"
+                                onclick="addToCart(4)"
+                            >
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SPECIAL OFFERS
+        ========================== -->
+        <section class="offers section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-tag">
+                        Deals
+                    </span>
+
+                    <h2>
+                        Special Offers
+                    </h2>
+
+                    <p>
+                        Grab these delicious deals before they are gone!
+                    </p>
+
+                </div>
+
+
+                <div class="offer-grid">
+
+
+                    <div class="offer-card">
+
+                        <div class="offer-content">
+
+                            <span class="offer-label">
+                                🔥 LIMITED OFFER
+                            </span>
+
+                            <h3>
+                                50% OFF
+                            </h3>
+
+                            <p>
+                                Get 50% off on your first order.
+                            </p>
+
+                            <span class="coupon">
+                                FIRST50
+                            </span>
+
+                            <a href="menu.html" class="offer-btn">
+                                Order Now
+                            </a>
+
+                        </div>
+
+                        <div class="offer-emoji">
+                            🍕
+                        </div>
+
+                    </div>
+
+
+                    <div class="offer-card">
+
+                        <div class="offer-content">
+
+                            <span class="offer-label">
+                                🎁 SPECIAL DEAL
+                            </span>
+
+                            <h3>
+                                FREE DELIVERY
+                            </h3>
+
+                            <p>
+                                Enjoy free delivery on orders above ₹499.
+                            </p>
+
+                            <span class="coupon">
+                                FREEDEL
+                            </span>
+
+                            <a href="menu.html" class="offer-btn">
+                                Order Now
+                            </a>
+
+                        </div>
+
+                        <div class="offer-emoji">
+                            🛵
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             WHY FRESHBITE
+        ========================== -->
+        <section class="why-us section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-tag">
+                        Why Choose Us?
+                    </span>
+
+                    <h2>
+                        Fresh Food, Happy You
+                    </h2>
+
+                </div>
+
+
+                <div class="features-grid">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            🚀
+                        </div>
+
+                        <h3>
+                            Fast Delivery
+                        </h3>
+
+                        <p>
+                            Get your favorite food delivered quickly and safely.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            🥗
+                        </div>
+
+                        <h3>
+                            Fresh Food
+                        </h3>
+
+                        <p>
+                            Fresh ingredients and delicious meals prepared with care.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            💳
+                        </div>
+
+                        <h3>
+                            Easy Payment
+                        </h3>
+
+                        <p>
+                            Simple and convenient payment options for your orders.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            ❤️
+                        </div>
+
+                        <h3>
+                            Best Restaurants
+                        </h3>
+
+                        <p>
+                            Discover delicious food from trusted restaurants.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CALL TO ACTION
+        ========================== -->
+        <section class="cta">
+
+            <div class="container cta-content">
+
+                <div>
+
+                    <span class="section-tag">
+                        Hungry?
+                    </span>
+
+                    <h2>
+                        Let's Get Your Food Delivered!
+                    </h2>
+
+                    <p>
+                        Explore our menu and order your favorite meal today.
+                    </p>
+
+                </div>
+
+                <a href="menu.html" class="primary-btn">
+                    Order Now →
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+
+            <div class="footer-about">
+
+                <a href="index.html" class="logo">
+                    🍕 FreshBite
+                </a>
+
+                <p>
+                    Delicious food delivered fresh to your doorstep.
+                    Your favorite meals are just a click away.
+                </p>
+
+                <div class="social-links">
+
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">◎</a>
+                    <a href="#" aria-label="Twitter">𝕏</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">Home</a>
+                <a href="restaurants.html">Restaurants</a>
+                <a href="menu.html">Menu</a>
+                <a href="cart.html">Cart</a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Account
+                </h3>
+
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+                <a href="account.html">My Account</a>
+                <a href="cart.html">Order History</a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Contact Us
+                </h3>
+
+                <p>📍 Chennai, Tamil Nadu</p>
+                <p>📞 +91 98765 43210</p>
+                <p>✉️ hello@freshbite.com</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <p>
+                    © 2026 FreshBite. All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
